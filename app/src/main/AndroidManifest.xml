@@ -1,9 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hackcwru.hackcwru">
+    package="com.hackcwru.hackcwru" >
 
-    <application android:allowBackup="true" android:label="@string/app_name"
-        android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme">
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".FirstUseActivity"
+            android:label="@string/title_activity_first_use" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HackerMainActivity"
+            android:label="@string/title_activity_hacker_main" >
+        </activity>
+        <activity
+            android:name=".MentorMainActivity"
+            android:label="@string/title_activity_mentor_main" >
+        </activity>
+        <activity
+            android:name=".OrganizerMainActivity"
+            android:label="@string/title_activity_organizer_main" >
+        </activity>
+        <activity
+            android:name=".GuestMainActivity"
+            android:label="@string/title_activity_guest_main" >
+        </activity>
     </application>
 
 </manifest>

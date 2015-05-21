@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cwru_blue">#0A304D</color>
+    <color name="hot_pink_hacker">#FF69b4</color>
+    <color name="magenta_mentor">#FF00FF</color>
+    <color name="orange_organizer">#FF5B00</color>
+    <color name="gold_guest">#FFD700</color>
+</resources>
