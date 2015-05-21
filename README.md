@@ -6,7 +6,7 @@ Hello World! Welcome to CWRU's recently inspired ambition to make the best hacka
 
 [Backend](https://github.com/hacsoc/hack_cwru)
 
-We'll primarily be using Trello to track feature assignment and progress. If you aren't in HacSoc or haven't been added to the board, contact [Adam](adam@case.edu). Major bugs are to be reported in issues up and to the right, while free beer and food is to be sent again to [Adam the slothbear](adam@case.edu).
+We'll primarily be using Trello to track feature assignment and progress. If you aren't in HacSoc or haven't been added to the board, contact <adam@case.edu>. Major bugs are to be reported in issues up and to the right, while free beer and food is to be sent again to <adam@case.edu>.
 
 # Authors
 Anno van den Akker
@@ -25,7 +25,7 @@ If you don't know what youre doing, git clone this wittle repo into any diretory
 
 If you don't have gradle install, run the gradlew script.  Once thats done, just  run gradle and wait.  Basically it makes like a dog and fetches all of the dependencies so you don't mess it up.  It can also setup a workspace for you.
 
-Hold on now, we don't want you just committing willie nillie so before you get started we ask you to contact us.  I can be reached at [acv31@case.edu](acv31@case.edu) (to my dismay, anno@case.edu is taken).  If by this point you arent a java fanatic and want to help with something else, you can head over to the other repos or contact [adam@case.edu](adam@case.edu) for iOS and [mason@case.edu](mason@case.edu) for backend (raillssss).
+Hold on now, we don't want you just committing willie nillie so before you get started we ask you to contact us.  I can be reached at <acv31@case.edu> (to my dismay, anno@case.edu is taken).  If by this point you arent a java fanatic and want to help with something else, you can head over to the other repos or contact <adam@case.edu> for iOS and <mason@case.edu> for backend (raillssss).
 
 We're using the following protocol with forking and pushing:
 
