@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="org.hacsoc.hackcwru.RegisterHackerActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/register_hacker_text"
+                android:text="Tell us about yourself:"
+                android:textSize="26sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/first_name_text_field_hacker"
+                android:layout_below="@id/register_hacker_text"
+                android:layout_marginBottom="24dp"
+                android:hint="First Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/last_name_text_field_hacker"
+                android:layout_below="@id/first_name_text_field_hacker"
+                android:layout_marginBottom="24dp"
+                android:hint="Last Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/alias_text_field_hacker"
+                android:layout_below="@id/last_name_text_field_hacker"
+                android:layout_marginBottom="24dp"
+                android:hint="Preferred name/alias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/gender_spinner_hacker"
+                android:entries="@array/gender"
+                android:layout_below="@+id/alias_text_field_hacker"
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp" />
+            <Spinner
+                android:id="@+id/education_spinner_hacker"
+                android:entries="@array/education"
+                android:layout_toRightOf="@id/gender_spinner_hacker"
+                android:layout_alignBottom="@+id/gender_spinner_hacker"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp" />
+
+            <EditText
+                android:id="@+id/age_text_field_hacker"
+                android:layout_toRightOf="@+id/education_spinner_hacker"
+                android:layout_alignBottom="@+id/education_spinner_hacker"
+                android:hint="Age"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/email_text_field_hacker"
+                android:layout_below="@id/gender_spinner_hacker"
+                android:layout_marginBottom="24dp"
+                android:hint="Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/password_text_field_hacker"
+                android:layout_below="@id/email_text_field_hacker"
+                android:layout_marginBottom="24dp"
+                android:hint="Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/confirm_password_text_field_hacker"
+                android:layout_below="@id/password_text_field_hacker"
+                android:layout_marginBottom="24dp"
+                android:hint="Confirm Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/register_btn_hacker"
+                android:text="Submit"
+                android:layout_below="@id/confirm_password_text_field_hacker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

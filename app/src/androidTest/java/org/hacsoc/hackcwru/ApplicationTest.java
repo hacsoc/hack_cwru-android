@@ -1,4 +1,4 @@
-package com.hackcwru.hackcwru;
+package org.hacsoc.hackcwru;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
