@@ -39,7 +39,7 @@ public class LoadActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onClick(View view) {
+    public void registerButtonClick(View view) {
         Intent intent = new Intent(this, FirstTimeActivity.class);
         startActivity(intent);
     }

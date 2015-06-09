@@ -17,13 +17,14 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/b1"
-        android:onClick="onClick"
+        android:id="@+id/register_button"
+        android:onClick="registerButtonClick"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Register" />
 
     <Button
-        android:layout_below="@+id/b1"
+        android:layout_below="@+id/register_button"
         android:onClick="onClick2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
