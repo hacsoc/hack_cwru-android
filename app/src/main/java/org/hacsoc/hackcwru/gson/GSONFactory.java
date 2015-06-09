@@ -10,10 +10,15 @@ import java.util.Calendar;
 
 /**
  * Factory to create Gson objects based on various adapters.
- * g
+ *
  * Created by andrew on 6/8/15.
  */
 public class GSONFactory {
+    /**
+     * Create a Gson object using the CalendarAdapter.
+     *
+     * @return
+     */
     public static Gson createCalendarAdapter() {
         /*
          * TODO: Not sure if creating this multiple times (i.e. registering the
@@ -22,6 +27,13 @@ public class GSONFactory {
         return createGson(Calendar.class, new CalendarAdapter());
     }
 
+    /**
+     * Create a Gson object for an arbitrary class and adapter.
+     *
+     * @param klass
+     * @param adapter
+     * @return
+     */
     private static Gson createGson(Class klass, TypeAdapter adapter) {
         return new GsonBuilder().registerTypeHierarchyAdapter(klass, adapter).create();
     }

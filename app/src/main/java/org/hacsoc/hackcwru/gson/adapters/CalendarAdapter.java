@@ -36,6 +36,9 @@ public class CalendarAdapter extends TypeAdapter<Calendar>
     private static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     private static final SimpleDateFormat format = new SimpleDateFormat(DATE_FORMAT);
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Calendar deserialize(JsonElement json,
                                 Type type,
@@ -49,6 +52,9 @@ public class CalendarAdapter extends TypeAdapter<Calendar>
         return calendarFromDate(date);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public JsonElement serialize(Calendar calendar,
                                  Type type,
@@ -63,11 +69,17 @@ public class CalendarAdapter extends TypeAdapter<Calendar>
         return jsonObject;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void write(JsonWriter out, Calendar value) throws IOException {
         dateTypeAdapter.write(out, value.getTime());
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Calendar read(JsonReader in) throws IOException {
         Date date;
@@ -79,6 +91,12 @@ public class CalendarAdapter extends TypeAdapter<Calendar>
         return calendarFromDate(date);
     }
 
+    /**
+     * Convert a Date to a Calendar object.
+     *
+     * @param date The input date.
+     * @return The Calendar object representing date.
+     */
     private Calendar calendarFromDate(Date date) {
         GregorianCalendar calendar = new GregorianCalendar();
         calendar.setTime(date);
