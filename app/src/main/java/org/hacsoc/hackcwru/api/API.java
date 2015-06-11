@@ -18,16 +18,19 @@ public class API {
      * @return
      */
     public static final String getBaseURL() {
+        String protocol = "http://";
+        String host;
         if (BuildConfig.DEBUG) {
             /*
              * This is what the android emulator sees as "localhost". If you
              * are developing on a real phone, change this IP (and port) to
              * the IP of the machine running the Rails server.
              */
-            return "10.0.2.2:3000";
+            host = "10.0.2.2:3000";
         } else {
-            return ""; // TODO: deploy the backend somewhere.
+            host = ""; // TODO: deploy the backend somewhere.
         }
+        return protocol + host;
     }
 
     /**
