@@ -18,7 +18,7 @@ import java.nio.charset.Charset;
  *
  * Created by andrew on 6/8/15.
  */
-public class Request extends AsyncTask<String, Void, String> {
+public class Request extends AsyncTask<String, Void, Response> {
     private Context context;
     private ResponseHandler responseHandler;
 
@@ -52,10 +52,10 @@ public class Request extends AsyncTask<String, Void, String> {
      *               1) The URL to which to send the request.
      *               2) The HTTP method to use.
      *               3) The request body. Set to null if no data needs to be sent.
-     * @return String containing the response data.
+     * @return Response object containing the response (status code and data).
      */
     @Override
-    protected String doInBackground(String... params) {
+    protected Response doInBackground(String... params) {
         try {
             return makeRequest(params[0], params[1], params[2]);
         } catch (IOException e) {
@@ -70,11 +70,11 @@ public class Request extends AsyncTask<String, Void, String> {
      * @param urlString URL to which to send the request.
      * @param method HTTP method to use.
      * @param body Request body. Set to null if no data needs to be sent.
-     * @return String containing the response data.
+     * @return Response object.
      * @throws IOException For malformed requests, as well as any errors trying to read from or
      *                     write to the connection's input/output streams.
      */
-    private String makeRequest(String urlString, String method, String body) throws IOException {
+    private Response makeRequest(String urlString, String method, String body) throws IOException {
         URL url = new URL(urlString);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         // Set parameters (timeouts and HTTP method) on the connection
@@ -90,7 +90,8 @@ public class Request extends AsyncTask<String, Void, String> {
         connection.connect();
 
         Log.d("Request", String.format("Returned with response code: %d",
-                                       connection.getResponseCode()));
-        return StreamUtil.toString(connection.getInputStream());
+                connection.getResponseCode()));
+        return new Response(connection.getResponseCode(),
+                            StreamUtil.toString(connection.getInputStream()));
     }
 }

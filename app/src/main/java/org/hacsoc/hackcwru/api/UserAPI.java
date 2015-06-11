@@ -23,10 +23,11 @@ public class UserAPI extends API {
     public static boolean create(User user,
                                  Context context,
                                  final ResponseHandler<User> outerHandler) {
-        ResponseHandler innerHandler = new ResponseHandler<String>() {
+        ResponseHandler innerHandler = new ResponseHandler<Response>() {
             @Override
-            public void responseReceived(String result) {
-                User user = GSONFactory.createCalendarAdapter().fromJson(result, User.class);
+            public void responseReceived(Response result) {
+                User user = GSONFactory.createCalendarAdapter()
+                        .fromJson(result.getContent(), User.class);
                 outerHandler.responseReceived(user);
             }
         };
