@@ -74,7 +74,8 @@ public class CalendarAdapter extends TypeAdapter<Calendar>
      */
     @Override
     public void write(JsonWriter out, Calendar value) throws IOException {
-        dateTypeAdapter.write(out, value.getTime());
+        Date date = value == null ? null : value.getTime();
+        dateTypeAdapter.write(out, date);
     }
 
     /**
