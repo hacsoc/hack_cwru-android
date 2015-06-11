@@ -4,6 +4,7 @@ import android.content.Context;
 
 import org.hacsoc.hackcwru.gson.GSONFactory;
 import org.hacsoc.hackcwru.model.User;
+import org.hacsoc.hackcwru.util.JSONUtil;
 
 /**
  * API requests for the User resource.
@@ -14,12 +15,12 @@ public class UserAPI extends API {
     /**
      * Invoke the create action on the server side by sending a POST request.
      *
-     * @param body The data representing the user to be created.
+     * @param user The user to be created.
      * @param context App context in which the request was made.
      * @param outerHandler Handler to send the created user back to.
      * @return
      */
-    public static boolean create(String body,
+    public static boolean create(User user,
                                  Context context,
                                  final ResponseHandler<User> outerHandler) {
         ResponseHandler innerHandler = new ResponseHandler<String>() {
@@ -29,6 +30,9 @@ public class UserAPI extends API {
                 outerHandler.responseReceived(user);
             }
         };
-        return sendRequest("/users", "POST", body, context, innerHandler);
+
+        String userJSON = JSONUtil.serialize(user.toJSONObject(), "user");
+
+        return sendRequest("/users", "POST", userJSON, context, innerHandler);
     }
 }
