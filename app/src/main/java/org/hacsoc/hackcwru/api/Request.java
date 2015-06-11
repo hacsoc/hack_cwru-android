@@ -78,15 +78,14 @@ public class Request extends AsyncTask<String, Void, String> {
         URL url = new URL(urlString);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         // Set parameters (timeouts and HTTP method) on the connection
+        connection.setRequestMethod(method);
         connection.setConnectTimeout(200);
         connection.setReadTimeout(200);
-        connection.setRequestMethod(method);
         if (body != null) {
             // Write in the request body if there is one.
+            connection.setDoOutput(true);
             connection.getOutputStream().write(body.getBytes(Charset.defaultCharset()));
         }
-        // Tell the request to put the response in its InputStream.
-        connection.setDoInput(true);
         // Actually make the request
         connection.connect();
 
