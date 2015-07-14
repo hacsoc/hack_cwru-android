@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">HackCWRU</string>
+    <string name="title_activity_register">RegisterActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_hacker">HackerActivity</string>
+
+    <string-array name="hacker_menu">
+        <item>Announcements</item>
+        <item>Schedule</item>
+    </string-array>
+</resources>
